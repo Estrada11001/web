@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> TAREA 2 </title>
+</head>
+<body>
+  <h1>Divisores de un Número</h1>
+  <label for="num">Ingresa un número:</label>
+  <input type="number" id="num" name="num"><br><br>
+  <button onclick="calcularDivisores()">Calcular Divisores</button>
+  <p id="resultado"></p>
+  <script>
+    function calcularDivisores() {
+      var num = parseInt(document.getElementById("num").value);
+      var divisores = [];
+      for (var i = 1; i <= num; i++) {
+        if (num % i === 0) {
+          divisores.push(i);
+        }
+      }
+
+      document.getElementById("resultado").innerHTML = "Los divisores de " + num + " son: " + divisores.join(", ");
+    }
+  </script>
+</body>
+</html>
