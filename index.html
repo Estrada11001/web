@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> TAREA 1 </title>
+</head>
+<body>
+  <h1>Suma de un cuadrado y un cubo</h1>
+  <p>Ingresa un número para calcular la suma de su cuadrado y su cubo:</p>
+  <input type="number" id="inputNumber" placeholder="Ingresa un número">
+  <button onclick="calculateSum()">Calcular</button>
+  <div id="result"></div>
+
+  <script>
+
+    function calculateSum() {
+      const inputNumber = document.getElementById("inputNumber").value;
+      const number = parseInt(inputNumber);
+
+      if (!isNaN(number)) {
+        const square = number * number;
+        const cube = number * number * number;
+        const sum = square + cube;
+        document.getElementById("result").textContent = `La suma del cuadrado y el cubo de ${number} es: ${sum}`;
+      } else {
+        document.getElementById("result").textContent = "Por favor ingresa un número válido.";
+      }
+    }
+  </script>
+</body>
+</html>
